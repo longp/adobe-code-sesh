@@ -1,16 +1,15 @@
 $(document).ready(function() {
+  var targetImage;
   var featherEditor = new Aviary.Feather({
         apiKey: '83a45835af9f4000939ce3abddcf48d8',
         onSave: function(imageID, newURL) {
-            var img = $('#img')[0];
-            img.src = newURL;
+            targetImage.src = newURL;
             featherEditor.close();
-
         }
     });
 
     $("#edit").click(function() {
-      var targetImage = $('#img')[0];
+      targetImage = $('#img')[0];
       launchEditor(targetImage.id, targetImage.src)
     })
 
